@@ -13,8 +13,8 @@ resource "aws_instance" "redis_server" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update -y
-              yum install -y redis${var.redis_version}
+              sudo apt update -y
+              sudo apt install -y redis${var.redis_version}
               systemctl start redis
               systemctl enable redis
               EOF
