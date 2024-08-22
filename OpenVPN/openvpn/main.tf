@@ -17,3 +17,6 @@ resource "aws_instance" "openvpn_server" {
               sudo apt install -y openvpn
               EOF
 }
+output "openvpn_public_ip" {
+  value = aws_instance.openvpn_server.public_ip
+}
